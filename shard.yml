@@ -1,0 +1,16 @@
+name: fcgi
+version: 0.1.0
+
+authors:
+  - Randy Wilson <randy@1702.org>
+
+description: |
+  A FastCGI library for crystal. Converts request from FastCGI protocol to Crystal and repsonses from Crystal to FastCGI.
+
+crystal: 0.24.2
+
+license: MIT
+
+targets:
+  fcgi:
+    main: src/fcgi.cr
