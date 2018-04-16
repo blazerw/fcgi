@@ -34,6 +34,30 @@ Enable CloudFlare on this domain?: false
 Google Apps:                       false
 ```
 
+Add `.htaccess` file into directory `mysubdomain.mydomain.com`:
+```
+<IfModule mod_fastcgi.c>
+AddHandler fastcgi-script .fcgi
+</IfModule>
+<IfModule mod_fcgid.c>
+AddHandler fcgid-script .fcgi
+</IfModule>
+
+Options +FollowSymLinks +ExecCGI
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ dispatch.fcgi/$1 [QSA,L]
+
+ErrorDocument 500 "500 Main: FCGI application failed to start properly!"
+ErrorDocument 501 "501 Main: FCGI application failed to start properly!"
+ErrorDocument 502 "502 Main: FCGI application failed to start properly!"
+ErrorDocument 503 "503 Main: FCGI application failed to start properly!"
+```
+You must change `dispatch.fcgi` to the name of your compiled crystal web
+application.
+
 ## Development
 
 TODO List:
