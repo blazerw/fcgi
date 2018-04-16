@@ -27,6 +27,7 @@ Run this domain under the user:    username
 Web Directory:                     /home/username/mysubdomain.mydomain.com
 PHP Mode:                          PHP 7.0 FastCGI # Yes, PHP Mode.
 Automatically upgrade PHP:         true
+HTTPS:                             true
 Extra Web Security?:               false
 Passenger:                         false
 Enable CloudFlare on this domain?: false
