@@ -60,7 +60,7 @@ application.
 
 ## Examples
 1. [Amber Framework](https://github.com/blazerw/fcgi/tree/master/examples/amber)
-1. [Lukcy Framework](https://github.com/blazerw/fcgi/tree/master/examples/lucky)
+1. [Lucky Framework](https://github.com/blazerw/fcgi/tree/master/examples/lucky)
 
 ## Development
 
