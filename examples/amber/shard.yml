@@ -1,0 +1,47 @@
+name: amber_world
+version: 0.1.0
+
+authors:
+  - Randy Wilson <randy@1702.org>
+
+crystal: 0.24.2
+
+license: UNLICENSED
+
+targets:
+  amber_world:
+    main: src/amber_world.cr
+
+  amber:
+    main: lib/amber/src/amber/cli.cr
+
+dependencies:
+  amber:
+    github: amberframework/amber
+    version: 0.6.7
+    #branch: master
+
+  granite_orm:
+    github: amberframework/granite-orm
+    version: ~> 0.8.2
+
+  quartz_mailer:
+    github: amberframework/quartz-mailer
+    version: ~> 0.5.0
+
+  jasper_helpers:
+    github: amberframework/jasper-helpers
+    version: ~> 0.1.6
+
+  mysql:
+    github: crystal-lang/crystal-mysql
+    version: ~> 0.4.0
+
+  fcgi:
+    github: blazerw/fcgi
+    version: "~> 0.1.0"
+    
+development_dependencies:
+  garnet_spec:
+    github: amberframework/garnet-spec
+    version: ~> 0.1.1

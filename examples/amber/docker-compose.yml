@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    image: amber_world
+    command: amber watch
+    environment:
+      DATABASE_URL: mysql://admin:password@db:3306/amber_world_development
+    ports:
+      - 3000:3000
+    links:
+      - db
+    volumes:
+    - .:/app
+    - nodes:/app/node_modules
+    - shards:/app/lib
+
+  migrate:
+    build: .
+    image: amber_world
+    command: bash -c 'while ! nc -q 1 db 3306 </dev/null; do sleep 1; done && amber db migrate seed'
+    environment:
+      DATABASE_URL: mysql://admin:password@db:3306/amber_world_development
+    volumes:
+      - .:/app
+    links:
+      - db
+
+  db:
+    image: mysql:5.6
+    environment:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: amber_world_development
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+    volumes:
+    - db:/var/lib/mysql
+
+volumes:
+  db:
+  nodes:
+  shards:

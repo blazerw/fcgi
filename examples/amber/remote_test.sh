@@ -7,9 +7,9 @@ echo "Building..."
 export HOSTNAME=subdomain.somedomain.com
 export USERNAME=username
 echo "Clearing compiled assets..."
-rm -rf public/*
+# rm -rf public/*
 echo "Compiling assets..."
-yarn run brunch -- build --production
+npm run release
 # To Update This Docker Image use the `make_compile_image.sh` script.
 docker run --rm -v "$(pwd)":/app -v "$(pwd)"/../fcgi.cr:/app/fcgi -w /app crystal/build-img:0.23.1 sh -c 'crystal build dispatch.cr -o dispatch.fcgi --error-trace'
 echo "Copying files..."

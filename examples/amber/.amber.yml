@@ -1,0 +1,4 @@
+type: app
+database: mysql
+language: ecr
+model: granite
