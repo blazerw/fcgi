@@ -1,6 +1,6 @@
 # fcgi
 
-`fcgi` is an implmentation of the FastCGI specification ( https://github.com/fast-cgi/spec/blob/master/spec.md )  
+`fcgi` is an implmentation of the [FastCGI specification](https://github.com/fast-cgi/spec/blob/master/spec.md)  
 
 ## Installation
 
@@ -19,7 +19,7 @@ require "fcgi"
 ```
 
 Basically, you create an app using your favorite Crystal framework (Kemal, Amber, and coming soon, Lucky). Figure out what's needed to boot your app and framework.
-See `examples` to get started.  These examples work on Dreamhost slices ( https://www.dreamhost.com ) and require a certain configuration. Current configuration:
+See `examples` to get started.  These examples work on [Dreamhost slices](https://www.dreamhost.com) and require a certain configuration. Current configuration:
 ```
 Domain to host:                    mysubdomain.mydomain.com
 Do you want the www in your URL?:  Remove WWW
@@ -57,6 +57,10 @@ ErrorDocument 503 "503 Main: FCGI application failed to start properly!"
 ```
 You must change `dispatch.fcgi` to the name of your compiled crystal web
 application.
+
+## Examples
+1. [Amber Framework](https://github.com/blazerw/fcgi/tree/master/examples/amber)
+1. [Lukcy Framework](https://github.com/blazerw/fcgi/tree/master/examples/lucky)
 
 ## Development
 
