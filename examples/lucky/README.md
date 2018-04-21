@@ -5,6 +5,8 @@ Built with lucky v0.4.0
 This is an example fcgi project written using [Lucky](https://luckyframework.org). Enjoy!
 This project was created using the instructions [Installing Lucky](https://luckyframework.org/guides/installing/)
 
+**NOTE:** [LuckyRecord](https://github.com/luckyframework/lucky_record) only _really_ works with PostgreSQL and Dreamhost gives you a lovely MySQL database.  I'm experimenting with MySQL support right now.
+
 ### Setting up the project
 
 1. Follow the instructions [Installing Lucky](https://luckyframework.org/guides/installing/)
